@@ -1,0 +1,64 @@
+{% set fixed_pages = 2 %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keep Talking and Nobody Explodes - {{ code }}</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="icon" href="../favicon.ico" type="image/png" />
+  </head>
+  <body>
+    <div id="TitlePage" class="page section-title">
+      <div class="page-content">
+        <img
+          src="../ktane-logo.png"
+          class="logo"
+          alt="Keep Talking and Nobody Explodes"
+        />
+        <div class="title">
+          <h1>
+            <span>Bomb Defusal Manual</span>
+          </h1>
+        </div>
+        <h2 class="versioning">
+          <span class="verification-code">Code: {{ code }}</span>
+        </h2>
+      </div>
+    </div>
+    <div class="page section-title">
+      <div class="page-header">
+        <span>Keep Talking and Nobody Explodes</span>
+        <span>Code {{ code }}</span>
+        <span>Section 1: Modules</span>
+      </div>
+      <div class="page-content">
+        <div class="vertical-spacer"></div>
+        <img
+          class="diagram"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgdmlld0JveD0iMCAwIDkwIDkwIiBmaWxsPSJub25lIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI4OSIgaGVpZ2h0PSI4OSIgc3Ryb2tlPSJibGFjayIvPgo8Y2lyY2xlIGN4PSI3OSIgY3k9IjExIiByPSIyIiBzdHJva2U9ImJsYWNrIi8+Cjwvc3ZnPg=="
+        />
+        <div class="new-block-formatting-context">
+          <h1>Section 1: Modules</h1>
+          <p>
+            Modules can be identified by an LED in the top right corner. When
+            this LED is lit green, the module has been disarmed.
+          </p>
+          <p>All modules must be disarmed to defuse the bomb.</p>
+        </div>
+      </div>
+      <div class="page-footer">Page 2 of {{ fixed_pages + rendered_pages }}</div>
+    </div>
+    {% for page in pages %}
+      <div class="page">
+        <div class="page-header">
+          <span>Keep Talking and Nobody Explodes</span>
+          <span>Code {{ code }}</span>
+          <span>{{ page.module_name }}</span>
+        </div>
+        <div class="page-content">{{ page.content }}</div>
+        <div class="page-footer">Page {{ loop.index1 + 2 }} of {{ fixed_pages + rendered_pages }}</div>
+      </div>
+    {% endfor %}
+  </body>
+</html>

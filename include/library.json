@@ -1,0 +1,27 @@
+{
+  "name": "BombManualGenerator",
+  "version": "0.2.0",
+  "authors": [
+    {
+      "name": "Pedro Sousa",
+      "email": "pedroteosousa@gmail.com",
+      "maintainer": true
+    }
+  ],
+  "description": "A library used by KTANE modules to generate manual pages",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reinodovo/bomb-manual-generator.git"
+  },
+  "export": {},
+  "keywords": [
+    "ktane"
+  ],
+  "platforms": [
+    "native"
+  ],
+  "frameworks": [
+    "*"
+  ]
+}
