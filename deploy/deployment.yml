@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bomb-manual-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deploy: bomb-manual-generator
+  template:
+    metadata:
+      labels:
+        app: bomb-manual-generator
+        deploy: bomb-manual-generator
+    spec:
+      containers:
+        - name: bomb-manual-generator
+          image: reinodovo/bomb-manual-generator:latest
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "4000Mi"
+              cpu: "400m"
