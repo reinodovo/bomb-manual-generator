@@ -1,6 +1,8 @@
 #ifndef MANUAL_H
 #define MANUAL_H
 
+#include <utils/b64e.h>
+
 #include <atomic>
 #include <filesystem>
 #include <fstream>
